@@ -114,7 +114,7 @@ And the resultant Zipkin graph ([http://localhost:9411/zipkin/dependency](http:/
 
 ![https://i.imgur.com/dTyEScc.png](https://i.imgur.com/dTyEScc.png)
 
-Also, you can play around with Prometheus at [http://localhost:9090/](http://localhost:9090/) to see stuff like these:
+Also, you can play around with Prometheus at [http://localhost:9090/](http://localhost:9090/) to see stuff like this:
 
 ![https://i.imgur.com/hsNvNmk.png](https://i.imgur.com/hsNvNmk.png)
 
