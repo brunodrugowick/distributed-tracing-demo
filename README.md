@@ -28,7 +28,7 @@ Notice the `[service-two,838f7c8a473d02df,f7e7a5468a2f7526,true]` part. This is 
 
 This demo is composed of 4 services. The first one ("first layer") balances requests between 2 and 3 (the "second layer" of services) which in turn ends up requesting info to the service number 4 (the "third layer" of the infrastructure).
 
-Service 3 has a `Thread.sleep(200)` to make it slower. You can see on Zipkin that he gets less requests than service 2 b ecause  of that.
+Service 3 has a `Thread.sleep(200)` to make it slower. You can see on Zipkin that it gets less requests than service 2 because  of that.
 
 You may run the `scripts/start-all.sh` script, which starts everything and runs an `ab` (apache Bench) test for you to have some info on Zipkin server. After running it instructs you to head to `http://localhost:9411` and analyze the tracing information for yourself.
 
