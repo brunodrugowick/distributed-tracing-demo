@@ -24,6 +24,10 @@ Notice the `[service-two,838f7c8a473d02df,f7e7a5468a2f7526,true]` part. This is 
 
 ... is an application that receives part of the log info (you can configure) and is able to show timing information about the requests through multiple (micro)services as well as a graphical visualization of your services infrastructure.
 
+# Observability
+
+Just for fun, I added Spring Boot Actuator to expose application metrics. Also, I added Micrometer's Prometheus dependency to expose the metrics according to how Prometheus expects it. Of course, I added a pre-configured Proometheus instance to the repository.
+
 # Running
 
 This demo is composed of 4 services. The first one ("first layer") balances requests between 2 and 3 (the "second layer" of services) which in turn ends up requesting info to the service number 4 (the "third layer" of the infrastructure).
@@ -45,6 +49,7 @@ Below  is the execution log:
 ```bash
 $ ./start-all.sh 
 Starting zipkin server...
+Starting Prometheus...
 Starting services...
 Waiting 20s for services to start
 Starting benchmarking...
@@ -101,9 +106,17 @@ Percentage of the requests served within a certain time (ms)
   98%    317
   99%    321
  100%    744 (longest request)
-Go to http://localhost:9411/ to see trace information
+Go to http://localhost:9411/ to see trace information.
+Go to http://localhost:9090/ to observe the services via Prometheus.
 ```
 
 And the resultant Zipkin graph ([http://localhost:9411/zipkin/dependency](http://localhost:9411/zipkin/dependency)):
 
 ![https://i.imgur.com/dTyEScc.png](https://i.imgur.com/dTyEScc.png)
+
+Also, you can play around with Prometheus at [http://localhost:9090/](http://localhost:9090/) to see stuff like these:
+
+![https://i.imgur.com/hsNvNmk.png](https://i.imgur.com/hsNvNmk.png)
+
+![https://i.imgur.com/5Ycj5ID.png](https://i.imgur.com/5Ycj5ID.png)
+
