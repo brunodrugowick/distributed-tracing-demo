@@ -2,7 +2,7 @@
 
 This project was develop with the purpose of testing and understanding Spring Cloud Sleuth and Spring Cloud Zipkin.
 
-This is an analysis of a trace (multiple requests spamming  several services):
+This is an analysis of a trace (multiple requests spanning  several services):
 ![https://i.imgur.com/YlU2bK1.png](https://i.imgur.com/YlU2bK1.png)
 
 This is the visualization of service dependencies:
